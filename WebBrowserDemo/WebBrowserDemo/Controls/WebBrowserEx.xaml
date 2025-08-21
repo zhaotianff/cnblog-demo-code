@@ -1,0 +1,14 @@
+﻿<Window x:Class="WebBrowserDemo.Controls.WebBrowserEx"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBrowserDemo.Controls"
+        xmlns:winForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"     
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"  Width="761" Height="444">
+    <WindowsFormsHost x:Name="wfh">
+        <winForms:WebBrowser x:Name="wfBrowser" />
+    </WindowsFormsHost>
+</Window>

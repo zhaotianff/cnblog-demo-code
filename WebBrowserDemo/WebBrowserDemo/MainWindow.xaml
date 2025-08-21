@@ -1,0 +1,26 @@
+﻿<Window x:Class="WebBrowserDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBrowserDemo"
+        xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:controls="clr-namespace:WebBrowserDemo.Controls"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize" Background="Transparent" WindowStyle="None" Height="979" Width="1259">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1"/>
+    </WindowChrome.WindowChrome>
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="background.png" Stretch="Uniform"></ImageBrush>
+        </Canvas.Background>
+        <WebBrowser x:Name="webBrowser" Width="527" Height="501" Canvas.Left="54" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top"></WebBrowser>
+
+        <!--自定义控件-->
+        <!--<controls:CustomWebBrowser x:Name="webBrowser2" Width="527" Height="501" Canvas.Left="54" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top"></controls:CustomWebBrowser>-->
+
+        <!--CEFSharp-->
+        <!--<cef:ChromiumWebBrowser x:Name="webBrowser3" Width="527" Height="501" Canvas.Left="54" Canvas.Top="249" HorizontalAlignment="Center" VerticalAlignment="Top" Address="https://bing.com"></cef:ChromiumWebBrowser>-->
+    </Canvas>
+</Window>
