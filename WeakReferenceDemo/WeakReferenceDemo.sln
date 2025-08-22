@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakReferenceDemo", "WeakReferenceDemo\WeakReferenceDemo.csproj", "{A52A5467-7615-4D60-91C6-DCF4158C78A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A52A5467-7615-4D60-91C6-DCF4158C78A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52A5467-7615-4D60-91C6-DCF4158C78A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52A5467-7615-4D60-91C6-DCF4158C78A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52A5467-7615-4D60-91C6-DCF4158C78A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D282AD47-8ADA-45A8-8F31-4BAA13A99E79}
+	EndGlobalSection
+EndGlobal
