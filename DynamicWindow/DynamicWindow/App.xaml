@@ -1,0 +1,9 @@
+﻿<Application x:Class="DynamicWindow.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DynamicWindow"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="WindowStyle.xaml"/>
+    </Application.Resources>
+</Application>
