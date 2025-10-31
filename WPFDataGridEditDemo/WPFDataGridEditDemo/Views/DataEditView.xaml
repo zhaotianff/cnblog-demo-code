@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDataGridEditDemo.Views"
         mc:Ignorable="d"
-        Title="DataEditView" Height="450" Width="800">
+        Title="DataEditView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Border>
             <Grid Background="Transparent">
