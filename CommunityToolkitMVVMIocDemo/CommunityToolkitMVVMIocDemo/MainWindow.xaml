@@ -1,0 +1,17 @@
+﻿<Window x:Class="CommunityToolkitMVVMIocDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CommunityToolkitMVVMIocDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="数1"></Label>
+        <TextBox Width="300" HorizontalAlignment="Left" Name="tbox_num1"></TextBox>
+        <Label Content="数2"></Label>
+        <TextBox Width="300" HorizontalAlignment="Left" Name="tbox_num2"></TextBox>
+        <Button Content="加" Click="Button_Click"></Button>
+        <Button Content="减" Click="Button_Click_1"></Button>
+    </StackPanel>
+</Window>
