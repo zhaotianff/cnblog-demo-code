@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="NavigationMenuDemo.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NavigationMenuDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Label Content="应用信息" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15"></Label>
+
+            <!--放置相应的图标-->
+            <Border CornerRadius="15" Background="{StaticResource MahApps.Brushes.Gray1}" Width="150" VerticalAlignment="Center" Height="35" Margin="0,0,20,0" HorizontalAlignment="Right"></Border>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border CornerRadius="15" Margin="5,20,15,30" Background="{StaticResource MahApps.Brushes.Gray1}" Grid.Column="0">
+                        <Image Source="../Resources/qq.jpg" Stretch="UniformToFill" Margin="5"></Image>
+                    </Border>
+
+                    <Border CornerRadius="15" Margin="5,20,15,30" Background="{StaticResource MahApps.Brushes.Gray1}"  Grid.Column="1">
+                        <Image Source="../Resources/sogou.jpg" Stretch="UniformToFill" Margin="5"></Image>
+                    </Border>
+
+                  
+                </Grid>
+
+
+               
+            </Grid>
+
+           
+        </Grid>
+
+       
+    </Grid>
+</UserControl>
