@@ -1,0 +1,4 @@
+LIBRARY
+EXPORTS
+global_variable CONSTANT
+global_variable_2 CONSTANT

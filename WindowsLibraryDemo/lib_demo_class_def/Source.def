@@ -1,0 +1,6 @@
+LIBRARY
+EXPORTS
+??0CLibTest@@QAE@XZ  ;构造函数
+??1CLibTest@@QAE@XZ  ;析构函数
+?TestMethod1@CLibTest@@QAEHXZ  ;TestMethod1
+?TestMethod2@CLibTest@@QAENXZ  ;TestMethod2
