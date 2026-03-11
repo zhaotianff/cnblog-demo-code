@@ -1,0 +1,50 @@
+﻿<blur:BlurWindow x:Class="WpfDockDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDockDemo"
+        xmlns:blur="clr-namespace:TianXiaTech;assembly=BlurWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="305" TitleVisibility="Collapsed" IconVisibility="Collapsed" ControlBoxVisibility="Collapsed" 
+                 Background="White" Name="main" MouseMove="BlurWindow_MouseMove" MouseLeave="main_MouseLeave" Topmost="True" PreviewMouseDown="main_MouseDown">
+    <blur:BlurWindow.Resources>
+        <Storyboard x:Key="hiddenAnimation">
+            <DoubleAnimation Storyboard.TargetName="main" Storyboard.TargetProperty="(Window.Left)" Duration="0:0:0.5" AutoReverse="False">
+                <DoubleAnimation.EasingFunction>
+                    <BackEase Amplitude="0.3"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+
+        <Storyboard x:Key="showAnimation">
+            <DoubleAnimation Storyboard.TargetName="main" Storyboard.TargetProperty="(Window.Left)" Duration="0:0:0.5" AutoReverse="False">
+                <DoubleAnimation.EasingFunction>
+                    <BackEase Amplitude="0.3" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </blur:BlurWindow.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="Transparent" MouseEnter="grid_DockArea_MouseEnter" Name="grid_DockArea" Visibility="Collapsed">
+            <Border Height="{Binding ElementName=main,Path=ActualHeight}" VerticalAlignment="Center" Width="2" Background="Silver">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Opacity=".3"></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+        </Grid>
+
+        <!--网上随便找的图-->
+        <Image Margin="10" Source="https://pic1.zhimg.com/80/v2-46ae37aad7cb70b4dc4ad4489cdaffdd_720w.webp?source=2c26e567" Grid.Column="1" PreviewMouseDown="main_MouseDown" >
+            <Image.Effect>
+                <DropShadowEffect Opacity=".5"></DropShadowEffect>
+            </Image.Effect>
+        </Image>
+    </Grid>
+</blur:BlurWindow>
