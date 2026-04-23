@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseProxyHook", "UseProxyHook\UseProxyHook.csproj", "{C909270B-C3C8-4780-B644-555DEB49386E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minHook", "minHook", "{EE2D92AD-CACE-4869-BBCC-CF97D5BBFBFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProxyHook", "ProxyHook", "{431C6F5F-5D62-4767-9447-25E9FDBF6FA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "harmony", "harmony", "{B301DF4F-3FE0-48C8-B558-C39D5A68E8D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyHookLib", "ProxyHookLib\ProxyHookLib.csproj", "{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyHookLib", "AssemblyHookLib\AssemblyHookLib.csproj", "{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C909270B-C3C8-4780-B644-555DEB49386E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C909270B-C3C8-4780-B644-555DEB49386E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C909270B-C3C8-4780-B644-555DEB49386E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C909270B-C3C8-4780-B644-555DEB49386E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C909270B-C3C8-4780-B644-555DEB49386E} = {431C6F5F-5D62-4767-9447-25E9FDBF6FA4}
+		{43DDC1F8-D20A-44CB-888E-FBCCE7FAD74A} = {431C6F5F-5D62-4767-9447-25E9FDBF6FA4}
+		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E} = {EE2D92AD-CACE-4869-BBCC-CF97D5BBFBFD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55986DBB-F129-46AE-A26C-CFB340317552}
+	EndGlobalSection
+EndGlobal
