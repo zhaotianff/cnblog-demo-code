@@ -17,7 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyHookLib", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyHookTest", "AssemblyHookTest\AssemblyHookTest.csproj", "{E3200633-408F-4A29-BB30-3FFC8B3961C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarmonyPatcher", "HarmonyPatcher\HarmonyPatcher.csproj", "{3285BF46-CEF9-4FD7-993C-27FA1956143C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarmonyPatcher", "HarmonyPatcher\HarmonyPatcher.csproj", "{3285BF46-CEF9-4FD7-993C-27FA1956143C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarmonyUsageDemo", "HarmonyUsageDemo\HarmonyUsageDemo.csproj", "{341C47E8-416D-4BF6-9400-C9FAD8A87278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3285BF46-CEF9-4FD7-993C-27FA1956143C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3285BF46-CEF9-4FD7-993C-27FA1956143C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3285BF46-CEF9-4FD7-993C-27FA1956143C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341C47E8-416D-4BF6-9400-C9FAD8A87278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341C47E8-416D-4BF6-9400-C9FAD8A87278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341C47E8-416D-4BF6-9400-C9FAD8A87278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341C47E8-416D-4BF6-9400-C9FAD8A87278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{7571C40C-EFBE-43B4-AD5C-9A84A6E13F3E} = {EE2D92AD-CACE-4869-BBCC-CF97D5BBFBFD}
 		{E3200633-408F-4A29-BB30-3FFC8B3961C5} = {EE2D92AD-CACE-4869-BBCC-CF97D5BBFBFD}
 		{3285BF46-CEF9-4FD7-993C-27FA1956143C} = {B301DF4F-3FE0-48C8-B558-C39D5A68E8D5}
+		{341C47E8-416D-4BF6-9400-C9FAD8A87278} = {B301DF4F-3FE0-48C8-B558-C39D5A68E8D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55986DBB-F129-46AE-A26C-CFB340317552}
