@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp20.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp20"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="320" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate x:Key="SimpleTemplate">
+            <TextBlock Text="{Binding Content}"></TextBlock>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullTemplate">
+            <!--避免定义内联资源-->
+            <!--<DataTemplate.Resources>
+                <SolidColorBrush Color="Green" x:Key="GreenBrush"></SolidColorBrush>
+            </DataTemplate.Resources>-->
+            <Grid Height="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="{Binding Image}" Effect="{StaticResource Shadow}"></Image>
+                <TextBlock Text="{Binding Content}" HorizontalAlignment="Center" Grid.Row="1" Foreground="{StaticResource GreenBrush}"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="list"></ListBox>
+
+
+        <Path Fill="{StaticResource GreenBrush}" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="path">
+            <Path.Data>
+                <EllipseGeometry x:Name="ellipiseGeometry" RadiusX="30" RadiusY="30" Center="15,15"></EllipseGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+</Window>
