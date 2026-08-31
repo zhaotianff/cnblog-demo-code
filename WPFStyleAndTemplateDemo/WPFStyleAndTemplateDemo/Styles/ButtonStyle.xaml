@@ -137,4 +137,57 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="ShapeButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource WD.RegularTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!--如果需要在外部对控件的内容进行动态控制，可以使用自定义控件功能-->
+                    <!--也就是下面的图形和文本不是固定的，可以在使用控制时动态设置-->
+                    <!--可以先参考：https://www.cnblogs.com/zhaotianff/p/9844457.html-->
+                    <!--后续再更新一篇WPF自定义控件的详细使用教程-->
+                    <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="1" SnapsToDevicePixels="True" >
+                        <!--不使用原始的ContentPresenter控件-->
+                        <!--使用Grid控件，并定义两行，用于显示图标和按钮文本-->
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--显示图形-->
+                            <Path Fill="#66b1ff" StrokeThickness="1" x:Name="path" Data="m 163.915 56.9601 l -50.78 -7.38 l -22.7 -46.02 c -0.62 -1.26 -1.64 -2.28 -2.9 -2.9 c -3.16 -1.56 -7 -0.26 -8.58 2.9 l -22.7 46.02 l -50.78 7.38 c -1.4 0.2 -2.68 0.86 -3.66 1.86 c -2.46 2.54 -2.42 6.58 0.12 9.06 l 36.74 35.82 l -8.68 50.58 c -0.24 1.38 -0.02 2.82 0.64 4.06 c 1.64 3.12 5.52 4.34 8.64 2.68 l 45.42 -23.88 l 45.42 23.88 c 1.24 0.66 2.68 0.88 4.06 0.64 c 3.48 -0.6 5.82 -3.9 5.22 -7.38 l -8.68 -50.58 l 36.74 -35.82 c 1 -0.98 1.66 -2.26 1.86 -3.66 c 0.54 -3.5 -1.9 -6.74 -5.4 -7.26 z m -48.66 41.7 l 7.22 42.06 l -37.78 -19.84 l -37.78 19.86 l 7.22 -42.06 l -30.56 -29.8 l 42.24 -6.14 l 18.88 -38.26 l 18.88 38.26 l 42.24 6.14 z"></Path>
+                            
+                            <!--显示文本-->
+                            <TextBlock HorizontalAlignment="Center" Text="ButtonText" Grid.Row="1"></TextBlock>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="PART_Border" Property="UIElement.Opacity" Value=".9" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" TargetName="path" Value=".9"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Effect" TargetName="path">
+                                <Setter.Value>
+                                    <DropShadowEffect Opacity=".1"></DropShadowEffect>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

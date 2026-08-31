@@ -8,12 +8,20 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Label Content="Button"></Label>
+            <Label Content="Button Style And Template"></Label>
             <WrapPanel>
                 <Button Content="HelloWorld" Style="{StaticResource WD.DefaultButton}" Width="88" Height="28" Margin="5"></Button>
                 <Button Content="HelloWorld" Style="{StaticResource WD.NormalButton}" Width="88" Height="28" Margin="5"></Button>
                 <Button Content="HelloWorld" Style="{StaticResource WD.PrimaryButton}" Width="88" Height="28" Margin="5"></Button>
                 <Button Content="HelloWorld" Style="{StaticResource WD.WindowButtonStyle}" Width="88" Height="28" Margin="5"></Button>
+            </WrapPanel>
+            <Label Content="Button Extension Style"></Label>
+            <Button Width="180" Height="210" Style="{StaticResource ShapeButton}" Click="Button_Click"></Button>
+            <Label Content="Button Style And Template"></Label>
+            <WrapPanel>
+                <Label Content="HelloWorld" Style="{StaticResource LabelStyle1}" Margin="5"></Label>
+                <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}" Margin="5"></Label>
+                <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}"  IsEnabled="False" Margin="5"></Label>
             </WrapPanel>
         </StackPanel>
     </Grid>
