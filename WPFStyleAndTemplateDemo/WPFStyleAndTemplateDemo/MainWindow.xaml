@@ -6,30 +6,53 @@
         xmlns:local="clr-namespace:WPFStyleAndTemplateDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <Label Content="Button Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
-            <WrapPanel>
-                <Button Content="HelloWorld" Style="{StaticResource WD.DefaultButton}" Width="88" Height="28" Margin="5"></Button>
-                <Button Content="HelloWorld" Style="{StaticResource WD.NormalButton}" Width="88" Height="28" Margin="5"></Button>
-                <Button Content="HelloWorld" Style="{StaticResource WD.PrimaryButton}" Width="88" Height="28" Margin="5"></Button>
-                <Button Content="HelloWorld" Style="{StaticResource WD.WindowButtonStyle}" Width="88" Height="28" Margin="5"></Button>
-            </WrapPanel>
-            <Label Content="Button Extension Style" Style="{StaticResource TitleLabelStyle}"></Label>
-            <Button Width="180" Height="210" Style="{StaticResource ShapeButton}" Click="Button_Click"></Button>
-            <Label Content="Button Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
-            <WrapPanel>
-                <Label Content="HelloWorld" Style="{StaticResource LabelStyle1}" Margin="5"></Label>
-                <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}" Margin="5"></Label>
-                <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}"  IsEnabled="False" Margin="5"></Label>
-            </WrapPanel>
-            <Label Content="CheckBox Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
-            <WrapPanel>
-                <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource CheckBoxStyle1}"></CheckBox>
-                <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource CheckBoxStyle2}"></CheckBox>
-                <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource WD.DefaultCheckBox}"></CheckBox>
-                <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource WD.DefaultCheckBox}" IsThreeState="True"></CheckBox>
-            </WrapPanel>
-        </StackPanel>
-    </Grid>
+    <TabControl>
+        <TabItem Header="Button">
+            <StackPanel>
+                <Label Content="Button Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <Button Content="HelloWorld" Style="{StaticResource WD.DefaultButton}" Width="88" Height="28" Margin="5"></Button>
+                    <Button Content="HelloWorld" Style="{StaticResource WD.NormalButton}" Width="88" Height="28" Margin="5"></Button>
+                    <Button Content="HelloWorld" Style="{StaticResource WD.PrimaryButton}" Width="88" Height="28" Margin="5"></Button>
+                    <Button Content="HelloWorld" Style="{StaticResource WD.WindowButtonStyle}" Width="88" Height="28" Margin="5"></Button>
+                </WrapPanel>
+                <Label Content="Button Extension Style" Style="{StaticResource TitleLabelStyle}"></Label>
+                <Button Width="180" Height="210" Style="{StaticResource ShapeButton}" Click="Button_Click"></Button>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="Label">
+            <StackPanel>
+                <Label Content="Label Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <Label Content="HelloWorld" Style="{StaticResource LabelStyle1}" Margin="5"></Label>
+                    <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}" Margin="5"></Label>
+                    <Label Content="HelloWorld" Style="{StaticResource WD.DefaultLabel}"  IsEnabled="False" Margin="5"></Label>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="CheckBox">
+            <StackPanel>
+                <Label Content="CheckBox Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource CheckBoxStyle1}"></CheckBox>
+                    <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource CheckBoxStyle2}"></CheckBox>
+                    <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource WD.DefaultCheckBox}"></CheckBox>
+                    <CheckBox Content="HelloWorld" Margin="5" Style="{StaticResource WD.DefaultCheckBox}" IsThreeState="True"></CheckBox>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="ToggleButton">
+            <StackPanel>
+                <Label Content="ToggleButton Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <ToggleButton Content="Default" Margin="5" Style="{StaticResource ToggleButtonStyle1}"></ToggleButton>
+                    <ToggleButton Content="Default(VisualState)" Style="{StaticResource ToggleButtonStyle2}" Margin="5"></ToggleButton>
+                    <ToggleButton Content="Custom" Margin="5" Style="{StaticResource WD.DefaultToggleButton}"></ToggleButton>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
 </Window>

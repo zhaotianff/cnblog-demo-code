@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <Color x:Key="WD.PrimaryColor">#409EFF</Color>
     <SolidColorBrush x:Key="WD.PrimaryBrush" Color="#409EFF" />
     <SolidColorBrush x:Key="WD.PrimaryMouseOverBrush" Color="#EBF4FF" />
     <SolidColorBrush x:Key="WD.BackgroundBrush" Color="#FFFFFF" />
