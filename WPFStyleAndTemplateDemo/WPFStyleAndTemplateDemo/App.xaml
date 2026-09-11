@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles/LabelStyle.xaml"/>
                 <ResourceDictionary Source="Styles/CheckBoxStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ToggleButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

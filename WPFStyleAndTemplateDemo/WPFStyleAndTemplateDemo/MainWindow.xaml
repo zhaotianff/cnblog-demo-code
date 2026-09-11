@@ -54,5 +54,16 @@
                 </WrapPanel>
             </StackPanel>
         </TabItem>
+
+        <TabItem Header="RadioButton">
+            <StackPanel>
+                <Label Content="RadioButton Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <RadioButton Content="Default" Margin="5" Style="{StaticResource RadioButtonStyle1}"></RadioButton>
+                    <RadioButton Content="Default(VisualState)" Style="{StaticResource RadioButtonStyle2}" Margin="5"></RadioButton>
+                    <RadioButton Content="Custom" Margin="5" Style="{StaticResource WD.DefaultRadioButton}"></RadioButton>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>
