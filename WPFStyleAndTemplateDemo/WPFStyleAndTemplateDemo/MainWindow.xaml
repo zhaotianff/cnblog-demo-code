@@ -65,5 +65,62 @@
                 </WrapPanel>
             </StackPanel>
         </TabItem>
+
+        <TabItem Header="ToolTip">
+            <StackPanel>
+                <Label Content="ToolTip Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <WrapPanel>
+                    <Label Content="Mouse Hover">
+                        <Label.ToolTip>
+                            <ToolTip Style="{StaticResource DefaultTooltipStyle}">
+                                <TextBlock Text="This is a ToolTip TextBlock"></TextBlock>
+                            </ToolTip>
+                        </Label.ToolTip>
+                    </Label>
+
+                    <Label Content="Mouse Hover(ShowDuration = 1000ms)" ToolTipService.ShowDuration="1000">
+                        <Label.ToolTip>
+                            <ToolTip Style="{StaticResource DefaultTooltipStyle}">
+                                <TextBlock Text="This is a ToolTip TextBlock"></TextBlock>
+                            </ToolTip>
+                        </Label.ToolTip>
+                    </Label>
+
+                    <Label Content="Mouse Hover(ToolTipService)"
+                           ToolTipService.InitialShowDelay="1000"
+                           ToolTipService.ShowDuration="7000"
+                           ToolTipService.BetweenShowDelay="2000"
+                           ToolTipService.Placement="Right" 
+                           ToolTipService.PlacementRectangle="50,0,0,0"
+                           ToolTipService.HorizontalOffset="10" 
+                           ToolTipService.VerticalOffset="20"
+                           ToolTipService.HasDropShadow="false"
+                           ToolTipService.ShowOnDisabled="true" 
+                           ToolTipService.IsEnabled="true"
+                           ToolTipService.ToolTipOpening="whenToolTipOpens"
+                           ToolTipService.ToolTipClosing="whenToolTipCloses">
+                        <Label.ToolTip>
+                            <ToolTip Style="{StaticResource DefaultTooltipStyle}">
+                                <TextBlock Text="This is a ToolTip TextBlock"></TextBlock>
+                            </ToolTip>
+                        </Label.ToolTip>
+                    </Label>
+
+                    <Label Content="Custom Style">
+                        <Label.ToolTip>
+                            <ToolTip Style="{StaticResource ToolTipStyle}" Content="Test ToolTip"></ToolTip>
+                        </Label.ToolTip>
+                    </Label>
+                </WrapPanel>
+                <WrapPanel>
+                    <!--如果遇到链接失效，可以替换为自己的图片-->
+                    <Label Content="https://b0.bdstatic.com/ugc/v-8Go9tCYMaqTLqsq-LUNw4c5e908e428caa7bf830c5a5cdd76f10.jpg">
+                        <Label.ToolTip>
+                            <ToolTip Style="{StaticResource ToolTipStyleImage}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Label},Path=Content}"></ToolTip>
+                        </Label.ToolTip>
+                    </Label>
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>

@@ -25,5 +25,25 @@ namespace WPFStyleAndTemplateDemo
         {
             MessageBox.Show("HelloWorld");
         }
+
+        /// <summary>
+        /// ToolTip显示时事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void whenToolTipOpens(object sender, ToolTipEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// ToolTip关闭时事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void whenToolTipCloses(object sender, ToolTipEventArgs e)
+        {
+
+        }
     }
 }
