@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="Styles/ToggleButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ToolTipStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ScrollViewerStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

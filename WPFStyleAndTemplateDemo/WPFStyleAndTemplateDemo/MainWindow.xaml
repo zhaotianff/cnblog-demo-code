@@ -122,5 +122,23 @@
                 </WrapPanel>
             </StackPanel>
         </TabItem>
+        <TabItem Header="ScrollViewer">
+            <StackPanel>
+                <Label Content="ScrollViewer Style And Template" Style="{StaticResource TitleLabelStyle}"></Label>
+                <Grid Height="300" Width="300">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Style="{StaticResource DefaultScrollViewerStyle}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Width="600" Height="600" Stretch="UniformToFill" Source="https://photo.tuchong.com/16627030/f/207539197.jpg"/>
+                            <Label Content="海上升明月，天涯共此时" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"></Label>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>
