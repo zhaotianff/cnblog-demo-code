@@ -165,6 +165,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="ScrollBarStyle1" TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
@@ -176,29 +177,43 @@
         <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
         <Setter Property="Template">
             <Setter.Value>
+                <!--垂直ScrollBar-->
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <!--使用Grid定义三行-->
                     <Grid x:Name="Bg" SnapsToDevicePixels="true">
                         <Grid.RowDefinitions>
+                            <!--第一行用于显示鼠标按住时向上滚动的RepeatButton-->
                             <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                            <!--第二行用于显示滑块区域-->
                             <RowDefinition Height="0.00001*"/>
+                            <!--第三行用于显示鼠标按住时向下滚动的RepeatButton-->
                             <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
                         </Grid.RowDefinitions>
+                        <!--滚动区域背景-->
                         <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.Row="1"/>
                         <RepeatButton x:Name="PART_LineUpButton" Command="{x:Static ScrollBar.LineUpCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Style="{StaticResource ScrollBarButton}">
+                            <!--向上的箭头图形-->
                             <Path x:Name="ArrowTop" Data="M 0,4 C0,4 0,6 0,6 0,6 3.5,2.5 3.5,2.5 3.5,2.5 7,6 7,6 7,6 7,4 7,4 7,4 3.5,0.5 3.5,0.5 3.5,0.5 0,4 0,4 z" Fill="{StaticResource ScrollBar.Static.Glyph}" Margin="3,4,3,3" Stretch="Uniform"/>
                         </RepeatButton>
                         <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="1">
+                            <!--DecreaseRepeatButton是Track的一个属性-->
+                            <!--设置用于减小 Track 控件 Value 属性的 RepeatButton-->
                             <Track.DecreaseRepeatButton>
                                 <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
                             </Track.DecreaseRepeatButton>
+                            <!--IncreaseRepeatButton是Track的一个属性-->
+                            <!--设置用于增加 Track 控件 Value 属性的 RepeatButton-->
                             <Track.IncreaseRepeatButton>
                                 <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
                             </Track.IncreaseRepeatButton>
+                            <!--Thumb是Track的一个属性-->
+                            <!--设置用于更改 Track 控件 Value 属性的 Thumb-->
                             <Track.Thumb>
                                 <Thumb Style="{StaticResource ScrollBarThumbVertical}"/>
                             </Track.Thumb>
                         </Track>
                         <RepeatButton x:Name="PART_LineDownButton" Command="{x:Static ScrollBar.LineDownCommand}" IsEnabled="{TemplateBinding IsMouseOver}" Grid.Row="2" Style="{StaticResource ScrollBarButton}">
+                            <!--向下的箭头图形-->
                             <Path x:Name="ArrowBottom" Data="M 0,2.5 C0,2.5 0,0.5 0,0.5 0,0.5 3.5,4 3.5,4 3.5,4 7,0.5 7,0.5 7,0.5 7,2.5 7,2.5 7,2.5 3.5,6 3.5,6 3.5,6 0,2.5 0,2.5 z" Fill="{StaticResource ScrollBar.Static.Glyph}" Margin="3,4,3,3" Stretch="Uniform"/>
                         </RepeatButton>
                     </Grid>
@@ -240,6 +255,7 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <!--水平ScrollBar-->
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto"/>
                 <Setter Property="MinWidth" Value="0"/>
@@ -249,10 +265,14 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <!--使用Grid定义三列-->
                             <Grid x:Name="Bg" SnapsToDevicePixels="true">
                                 <Grid.ColumnDefinitions>
+                                    <!--第一列用于显示鼠标按住时向左滚动的RepeatButton-->
                                     <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
+                                    <!--第二列用于显示滚动区域-->
                                     <ColumnDefinition Width="0.00001*"/>
+                                    <!--第三列用于显示鼠标按住时向右滚动的RepeatButton-->
                                     <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
                                 </Grid.ColumnDefinitions>
                                 <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.Column="1"/>
@@ -357,5 +377,189 @@
                 <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <!--滚动条透明区域样式-->
+    <Style x:Key="WD.RepeatButtonTransparent" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--垂直滚动滑块样式-->
+    <Style x:Key="WD.ScrollBarThumbVertical"  TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border x:Name="PART_Thumbborder">
+                        <Rectangle x:Name="PART_Rectangle" Height="{TemplateBinding Height}" Fill="{DynamicResource WD.RegularTextBrush}" RadiusX="1" RadiusY="1" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--水平滚动滑块样式-->
+    <Style x:Key="WD.ScrollBarThumbHorizontal" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border x:Name="PART_Thumbborder">
+                        <Rectangle x:Name="PART_Rectangle" Height="{TemplateBinding Height}" Fill="{DynamicResource WD.PrimaryTextBrush}" RadiusX="1" RadiusY="1" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--自定义ScrollBar样式-->
+    <Style x:Key="WD.DefaultScrollBar" TargetType="{x:Type ScrollBar}">
+        <!--为滑块增加动画效果，当鼠标进入时，滑块变宽-->
+        <Style.Resources>
+            <Storyboard x:Key="ScrollMouseOut">
+                <DoubleAnimation Storyboard.TargetName="PART_Track" Storyboard.TargetProperty="Width" To="2" Duration="00:00:0.1" />
+            </Storyboard>
+            <Storyboard x:Key="ScrollMouseOver">
+                <DoubleAnimation Storyboard.TargetName="PART_Track" Storyboard.TargetProperty="Width" To="10" Duration="00:00:0.1" />
+            </Storyboard>
+        </Style.Resources>
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Width" Value="12" />
+        <Setter Property="MinWidth" Value="8" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <!--这里省略了向上/向下箭头按钮-->
+                    <!--只保留了中间的滚动区域-->
+                    <!--使用Grid作为容器-->
+                    <Grid x:Name="Bg" Width="{TemplateBinding Width}" Background="Transparent" SnapsToDevicePixels="True">
+                        <Track x:Name="PART_Track" Width="2" Margin="0,0,1,0" HorizontalAlignment="Right" IsDirectionReversed="True" IsEnabled="{TemplateBinding IsMouseOver}">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource WD.RepeatButtonTransparent}" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource WD.RepeatButtonTransparent}" />
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource WD.ScrollBarThumbVertical}" />
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                    <!--鼠标划过时，触发滚动条变宽动画-->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource ScrollMouseOut}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource ScrollMouseOver}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="MinWidth" Value="0" />
+                <Setter Property="Height" Value="12" />
+                <Setter Property="MinHeight" Value="8" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <!--为滑块增加动画效果，当鼠标进入时，滑块变高-->
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="ScrollMouseOutHeight">
+                                    <DoubleAnimation Storyboard.TargetName="PART_Track" Storyboard.TargetProperty="Height" To="2" Duration="00:00:0.1" />
+                                </Storyboard>
+                                <Storyboard x:Key="ScrollMouseOverHeight">
+                                    <DoubleAnimation Storyboard.TargetName="PART_Track" Storyboard.TargetProperty="Height" To="10" Duration="00:00:0.1" />
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Grid Height="{TemplateBinding Height}" Background="Transparent" SnapsToDevicePixels="True">
+                                <Track x:Name="PART_Track" Height="2" Margin="0,0,0,1" VerticalAlignment="Bottom" IsEnabled="{TemplateBinding IsMouseOver}" Visibility="Hidden">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource WD.RepeatButtonTransparent}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource WD.RepeatButtonTransparent}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource WD.ScrollBarThumbHorizontal}" />
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard Storyboard="{StaticResource ScrollMouseOutHeight}" />
+                                    </Trigger.ExitActions>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource ScrollMouseOverHeight}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--自定义ScrollViewer样式-->
+    <Style x:Key="WD.DefaultScrollViewer" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="{TemplateBinding Padding}" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        <!--使用自定义样式的ScrollBar(垂直)-->
+                        <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource WD.DefaultScrollBar}"/>
+                        <!--使用自定义样式的ScrollBar(水平)-->
+                        <!--主要是通过设置属性 Orientation="Horizontal"来进行切换-->
+                        <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource WD.DefaultScrollBar}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="WD.BaseBrush" Color="#DCDFE6" />
     <SolidColorBrush x:Key="WD.RegularTextBrush" Color="#606266" />
     <SolidColorBrush x:Key="WD.WindowTextBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="WD.PrimaryTextBrush" Color="#303133"></SolidColorBrush>
 
     <Style x:Key="WD.WindowButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="#303133" />
