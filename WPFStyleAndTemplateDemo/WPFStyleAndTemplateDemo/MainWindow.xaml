@@ -154,5 +154,50 @@
                 </Grid>
             </StackPanel>
         </TabItem>
+        <TabItem Header="TabItem">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <HeaderedContentControl Background="LightBlue"
+                        Header="Header"
+                        Content="This is the content"/>
+
+                <TabControl Grid.Column="1">
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="10" Height="10" Fill="DarkGray"/>
+                                <TextBlock>Tab 1</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <TextBlock Margin="5,0,0,0" HorizontalAlignment="Left">Enter some text</TextBlock>
+                            <TextBox Name="textBox1" Width="280" HorizontalAlignment="Left" Margin="5,10,0,0"/>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Tab 2">
+                        <TextBlock Text="{Binding ElementName=textBox1, Path=Text}"/>
+                    </TabItem>
+                </TabControl>
+
+                <TabControl Grid.Column="0" Grid.Row="1">
+                    <TabItem Header="Tab1" Style="{StaticResource TabItemStyleWithVisualState}"></TabItem>
+                    <TabItem Header="Tab2" Style="{StaticResource TabItemStyleWithVisualState}"></TabItem>
+                </TabControl>
+
+                <TabControl Grid.Column="1" Grid.Row="1">
+                    <TabItem Header="Custom Tab1" Style="{StaticResource WD.BaseTAndBTabItem}"></TabItem>
+                    <TabItem Header="Custom Tab2" Style="{StaticResource WD.BaseTAndBTabItem}"></TabItem>
+                </TabControl>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>
