@@ -1,0 +1,15 @@
+﻿<Window x:Class="WindowRenderingHandle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowRenderingHandle"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+    <WrapPanel>
+        <Button Content="添加window1订阅" Margin="10" Click="Button_Click"></Button>
+        <Button Content="移除window1订阅" Margin="10" Click="Button_Click_1"></Button>
+        <Button Content="添加window2订阅" Margin="10" Click="Button_Click_2"></Button>
+        <Button Content="移除window2订阅" Margin="10" Click="Button_Click_3"></Button>
+    </WrapPanel>
+</Window>
